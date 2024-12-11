@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Représente un département dans une entreprise.
+ * Représente un département dans une entreprise avec un nom et une liste d'employées.
+ * @see main.java.Employee
  */
 public class Department {
 
@@ -15,6 +16,7 @@ public class Department {
      * Initialise un nouveau département.
      * 
      * @param name Le nom du département.
+     * @throws IllegalArgumentException si le nom est null
      */
     public Department(String name) {
         if (name == null || name.isEmpty()) {
@@ -27,7 +29,8 @@ public class Department {
     /**
      * Ajoute un employé au département.
      * 
-     * @param employee L'employé à ajouter.
+     * @param employee L'employé à ajouter (non null)
+     * @throws IllegalArgumentException si l'employé est null
      */
     public void addEmployee(Employee employee) {
         if(employee == null) {
@@ -39,7 +42,8 @@ public class Department {
     /**
      * Retire un employé du département.
      * 
-     * @param employee L'employé à retirer.
+     * @param employee L'employé à retirer (non null)
+     * @throws IllegalArgumentException si l'employé est null
      */
     public void removeEmployee(Employee employee) {
         if(employee == null) {
@@ -58,7 +62,10 @@ public class Department {
         return new ArrayList<>(employees);
     }
 
-    @Override
+    /**
+     * Affiche les caractéristiques d'un département
+     * @return un représentation d'un département
+     */
     public String toString() {
         return "Department [name=" + name + ", employees=" + employees + ", listEmployees()=" + listEmployees() + "]";
     }
