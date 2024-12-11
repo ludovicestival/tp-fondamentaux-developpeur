@@ -12,8 +12,8 @@ public class Employee {
     /**
      * Initialise un nouvel employé.
      * @param nom Le nom de l'employé (non vide)
-     * @param id
-     * @param position
+     * @param id L'identifiant de l'employé (positif)
+     * @param position La position de l'employé
      * @throws IllegalArgumentException si le nom est vide ou si l'id est négatif
      */
     public Employee(String nom, int id, String position) {
